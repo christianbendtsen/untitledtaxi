@@ -38,9 +38,9 @@ public class Taxi {
         return executionTime;
     }
 
-    public void setExecutionTime(long startTime, long endTime) {
-        executionTime = (endTime-startTime)/1000;
-        System.out.println("Elapsed Seconds: " + executionTime);
+    public long setExecutionTime(long startTime, long endTime) {
+        return executionTime = endTime-startTime;
+        //System.out.println("Elapsed Seconds: " + executionTime);
     }
 
     public Taxi(long startTime, long endTime){
