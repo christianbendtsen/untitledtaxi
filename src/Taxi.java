@@ -1,22 +1,62 @@
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class Taxi {
 
     public int number;
-    public boolean inUse = false;
-    long startTime;
-    long endTime;
-    long executionTime;
+    private long startTime;
+    private long startTimeSeconds;
+    private long endTime;
+    private long endTimeSeconds;
+    private long executionTime;
 
 
+    public ArrayList<Taxi> listOfTaxi = new ArrayList<Taxi>();
 
+    public long getStartTime(){
+
+        return startTime;
+    }
+
+    public long setStartTime(){
+
+        return startTime = System.currentTimeMillis();
+
+    }
+
+    public long getEndTime(){
+
+        return endTime;
+    }
+
+    public long setEndTime(){
+
+        endTime = System.currentTimeMillis();
+        return endTime;
+    }
+
+    public long getExecutionTime(){
+
+        return executionTime;
+    }
+
+    public void setExecutionTime(long startTime, long endTime) {
+        executionTime = (endTime-startTime)/1000;
+        System.out.println("Elapsed Seconds: " + executionTime);
+    }
+
+    public Taxi(long startTime, long endTime){
+
+        this.startTime=startTime;
+        this.endTime=endTime;
+    }
 
     public void startTaxi(){
 
-        if (getListOfTaxi().size()>=1){
-            long startTime = System.currentTimeMillis();
-            System.out.println( "Elapsed milliseconds: " + executionTime );
-        }
+
+        long startTime = System.currentTimeMillis();
+        System.out.println( "Elapsed milliseconds: " + executionTime );
+
 
     }
 
@@ -41,8 +81,30 @@ public class Taxi {
     public void priser(){
     }
 
+    //public void addTaxi(){
+      //  listOfTaxi.add(Taxi);
+    //}
 
 
-    public Taxi(){}
+
+    public void addDummyData(){
+        listOfTaxi.add(new Taxi(1));
+        listOfTaxi.add(new Taxi(2));
+        listOfTaxi.add(new Taxi(3));
+        listOfTaxi.add(new Taxi(4));
+        listOfTaxi.add(new Taxi(5));
+        listOfTaxi.add(new Taxi(6));
+        listOfTaxi.add(new Taxi(7));
+        listOfTaxi.add(new Taxi(8));
+        listOfTaxi.add(new Taxi(9));
+        listOfTaxi.add(new Taxi(10));
+    }
+
+    public Taxi(int number){
+        this.number = number;
+    }
+
+    public Taxi(){
+
+    }
 }
-
