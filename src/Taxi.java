@@ -3,20 +3,20 @@ import java.util.ArrayList;
 public class Taxi {
 
     public int number;
+    public boolean inUse = false;
     long startTime;
     long endTime;
     long executionTime;
 
-    public ArrayList<Taxi> listOfTaxi = new ArrayList<Taxi>();
 
 
 
     public void startTaxi(){
 
-
-        long startTime = System.currentTimeMillis();
-        System.out.println( "Elapsed milliseconds: " + executionTime );
-
+        if (getListOfTaxi().size()>=1){
+            long startTime = System.currentTimeMillis();
+            System.out.println( "Elapsed milliseconds: " + executionTime );
+        }
 
     }
 
@@ -41,30 +41,8 @@ public class Taxi {
     public void priser(){
     }
 
-    //public void addTaxi(){
-      //  listOfTaxi.add(Taxi);
-    //}
 
-
-
-    public void addDummyData(){
-        listOfTaxi.add(new Taxi(1));
-        listOfTaxi.add(new Taxi(2));
-        listOfTaxi.add(new Taxi(3));
-        listOfTaxi.add(new Taxi(4));
-        listOfTaxi.add(new Taxi(5));
-        listOfTaxi.add(new Taxi(6));
-        listOfTaxi.add(new Taxi(7));
-        listOfTaxi.add(new Taxi(8));
-        listOfTaxi.add(new Taxi(9));
-        listOfTaxi.add(new Taxi(10));
-    }
-
-    public Taxi(int number){
-        this.number = number;
-    }
 
     public Taxi(){}
 }
 
-yoyoyo
