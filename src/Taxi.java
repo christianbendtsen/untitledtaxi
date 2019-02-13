@@ -1,15 +1,57 @@
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class Taxi {
 
     public int number;
-    long startTime;
-    long endTime;
-    long executionTime;
+    private long startTime;
+    private long startTimeSeconds;
+    private long endTime;
+    private long endTimeSeconds;
+    private long executionTime;
+
 
     public ArrayList<Taxi> listOfTaxi = new ArrayList<Taxi>();
 
+    public long getStartTime(){
 
+        return startTime;
+    }
+
+    public long setStartTime(){
+
+        startTime = System.currentTimeMillis();
+        startTimeSeconds = TimeUnit.MILLISECONDS.toSeconds(startTime);
+        return startTimeSeconds;
+    }
+
+    public long getEndTime(){
+
+        return endTime;
+    }
+
+    public long setEndTime(){
+
+        endTime = System.currentTimeMillis();
+        endTimeSeconds = TimeUnit.MILLISECONDS.toSeconds(endTime);
+        return endTimeSeconds;
+    }
+
+    public long getExecutionTime(){
+
+        return executionTime;
+    }
+
+    public long setExecutionTime(long startTimeSeconds, long endTimeSeconds) {
+        executionTime = (endTimeSeconds-startTimeSeconds)/10000000;
+        return executionTime;
+    }
+
+    public Taxi(long startTime, long endTime){
+
+        this.startTime=startTime;
+        this.endTime=endTime;
+    }
 
     public void startTaxi(){
 
@@ -64,7 +106,7 @@ public class Taxi {
         this.number = number;
     }
 
-    public Taxi(){}
-}
+    public Taxi(){
 
-yoyoyo
+    }
+}

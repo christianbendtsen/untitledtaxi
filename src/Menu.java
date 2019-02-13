@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Menu {
@@ -6,6 +7,7 @@ public class Menu {
     public void startmenu(){
 
         Taxi taxi = new Taxi();
+        DecimalFormat decimalFormat = new DecimalFormat("#.0");
 
         Scanner scanner = new Scanner(System.in);
 
@@ -23,9 +25,13 @@ public class Menu {
         int in = scanner.nextInt();
         switch (in){
 
-            case 1: taxi.startTaxi();
-                break;
-            case 2: taxi.stopTaxi();
+            case 1: taxi.setStartTime();
+                    startmenu();
+                //taxi.startTaxi();
+            case 2: taxi.setEndTime();
+                System.out.println(taxi.setExecutionTime(taxi.getStartTime(),taxi.getEndTime()));
+                startmenu();
+                //taxi.stopTaxi();
                 break;
             case 3: taxi.pauseTaxi();
                 break;
