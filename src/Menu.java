@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class Menu {
 
+
     public void startmenu(){
 
         Taxi taxi = new Taxi();
-        Pris pris = new Pris();
 
         Scanner scanner = new Scanner(System.in);
 
@@ -29,7 +29,7 @@ public class Menu {
                 break;
             case 3: taxi.pauseTaxi();
                 break;
-            case 4: pris.priser();
+            case 4: taxi.priser();
                 break;
             case 5: taxi.gratisTaxi();
                 break;
