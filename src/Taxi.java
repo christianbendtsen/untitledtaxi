@@ -5,9 +5,7 @@ public class Taxi {
 
     public int number;
     private long startTime;
-    private long startTimeSeconds;
     private long endTime;
-    private long endTimeSeconds;
     private long executionTime;
 
 
