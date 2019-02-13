@@ -20,9 +20,8 @@ public class Taxi {
 
     public long setStartTime(){
 
-        startTime = System.currentTimeMillis();
-        startTimeSeconds = TimeUnit.MILLISECONDS.toSeconds(startTime);
-        return startTimeSeconds;
+        return startTime = System.currentTimeMillis();
+
     }
 
     public long getEndTime(){
@@ -33,8 +32,7 @@ public class Taxi {
     public long setEndTime(){
 
         endTime = System.currentTimeMillis();
-        endTimeSeconds = TimeUnit.MILLISECONDS.toSeconds(endTime);
-        return endTimeSeconds;
+        return endTime;
     }
 
     public long getExecutionTime(){
@@ -42,9 +40,9 @@ public class Taxi {
         return executionTime;
     }
 
-    public long setExecutionTime(long startTimeSeconds, long endTimeSeconds) {
-        executionTime = (endTimeSeconds-startTimeSeconds)/10000000;
-        return executionTime;
+    public void setExecutionTime(long startTime, long endTime) {
+        executionTime = (endTime-startTime)/1000;
+        System.out.println("Elapsed Seconds: " + executionTime);
     }
 
     public Taxi(long startTime, long endTime){
